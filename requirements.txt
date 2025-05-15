@@ -1,0 +1,8 @@
+fractal-defi
+pandas
+numpy
+matplotlib
+python-dateutil
+requests
+mlflow
+optuna
