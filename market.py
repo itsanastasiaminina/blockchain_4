@@ -45,7 +45,8 @@ def fetch_onchain_data(
     else:
         raise RuntimeError("Failed to fetch")
 
-    df = df_price.join(df_pool[['volume']], how='inner')
+    df = df_price.join(df_pool[['volume', 'tvl']], how='inner')
     df = df.rename(columns={'close': 'price'})
     df = df.reset_index().rename(columns={'index': 'timestamp'})
-    return df[['timestamp', 'price', 'volume']]
+    print(df)
+    return df[['timestamp', 'price', 'volume', 'tvl']]
